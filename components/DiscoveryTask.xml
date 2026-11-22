@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Finds Lyrion servers on the local network with the SlimProto UDP broadcast on port 3483. -->
+<component name="DiscoveryTask" extends="Task">
+  <interface>
+    <!-- where to send the query: the broadcast address, or one server's IP to learn its web port -->
+    <field id="target" type="string" value="255.255.255.255"/>
+    <!-- [{ip, name, json}] -->
+    <field id="servers" type="array"/>
+    <field id="done" type="boolean" alwaysNotify="true"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/source/Proto.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/DiscoveryTask.brs"/>
+</component>

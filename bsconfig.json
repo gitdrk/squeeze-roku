@@ -1,0 +1,13 @@
+{
+  "rootDir": ".",
+  "files": [
+    "manifest",
+    "source/**/*",
+    "components/**/*",
+    "images/**/*"
+  ],
+  "stagingDir": "out/staging",
+  "outFile": "out/squeeze-roku.zip",
+  "createPackage": true,
+  "retainStagingDir": true
+}

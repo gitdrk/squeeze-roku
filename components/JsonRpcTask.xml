@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Talks to Lyrion's JSON-RPC on the web port: what's playing, the player list, and remote-control commands. -->
+<component name="JsonRpcTask" extends="Task">
+  <interface>
+    <field id="server" type="string"/>
+    <field id="port" type="integer" value="9000"/>
+    <field id="mac" type="string"/>
+    <!-- [playerId, [command, args...]] -->
+    <field id="cmd" type="array" alwaysNotify="true"/>
+    <!-- {ok, mode, time, duration, title, artist, album, art, syncMaster, syncSlaves} -->
+    <field id="status" type="assocarray"/>
+    <!-- [{id, name, connected}] -->
+    <field id="players" type="array"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/JsonRpcTask.brs"/>
+</component>

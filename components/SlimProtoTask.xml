@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The player. Holds the SlimProto connection to Lyrion (TCP 3483) and drives the Audio node. -->
+<component name="SlimProtoTask" extends="Task">
+  <interface>
+    <!-- set by MainScene -->
+    <field id="audio" type="node"/>
+    <field id="serverIp" type="string"/>
+    <field id="mac" type="string"/>
+    <field id="playerName" type="string"/>
+    <field id="formats" type="string" value="flc,mp3"/>
+    <!-- "resync" asks MainScene to restart the group in step, "seek" seeks the Audio node, "off" ignores -->
+    <field id="catchUp" type="string" value="resync"/>
+    <field id="command" type="string" alwaysNotify="true"/>
+    <!-- learned here: ms from control = "play" to sound. MainScene passes it to Lyrion as startDelay -->
+    <field id="startLag" type="integer" value="400"/>
+    <!-- reported back -->
+    <field id="connection" type="string" value="starting"/>
+    <field id="reportedName" type="string"/>
+    <field id="lastError" type="string"/>
+    <!-- set when Lyrion asks us to skip ahead and catchUp is "resync": how far behind we are, in ms -->
+    <field id="behindMs" type="integer" alwaysNotify="true"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/source/Proto.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/SlimProtoTask.brs"/>
+</component>

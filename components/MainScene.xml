@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Now Playing screen, 1920x1080. Colors follow the plan's mockup. -->
+<component name="MainScene" extends="Scene">
+  <script type="text/brightscript" uri="pkg:/components/Settings.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/MainScene.brs"/>
+  <children>
+    <Rectangle id="bg" width="1920" height="1080" color="0x0E1316FF"/>
+    <Audio id="audio"/>
+
+    <Label id="header" translation="[120,80]" width="1680" color="0x8A979FFF">
+      <Font role="font" uri="font:MediumSystemFontFile" size="30"/>
+    </Label>
+
+    <Rectangle id="artBox" translation="[120,200]" width="600" height="600" color="0x24413EFF"/>
+    <Poster id="art" translation="[120,200]" width="600" height="600" loadDisplayMode="scaleToFit"/>
+
+    <Label id="title" translation="[800,300]" width="1000" wrap="false" color="0xE8EDF0FF">
+      <Font role="font" uri="font:BoldSystemFontFile" size="66"/>
+    </Label>
+    <Label id="artist" translation="[800,390]" width="1000" color="0xB8C3CAFF">
+      <Font role="font" uri="font:MediumSystemFontFile" size="40"/>
+    </Label>
+    <Label id="album" translation="[800,445]" width="1000" color="0x8A979FFF">
+      <Font role="font" uri="font:MediumSystemFontFile" size="34"/>
+    </Label>
+
+    <Rectangle id="syncPill" translation="[800,520]" width="600" height="60" color="0x16302EFF" visible="false">
+      <Rectangle id="syncDot" translation="[26,24]" width="12" height="12" color="0x4CC3B8FF"/>
+      <Label id="syncLabel" translation="[54,0]" height="60" vertAlign="center" color="0x4CC3B8FF">
+        <Font role="font" uri="font:MediumSystemFontFile" size="30"/>
+      </Label>
+    </Rectangle>
+
+    <Group id="progress" visible="false">
+      <Rectangle id="progTrack" translation="[800,660]" width="920" height="8" color="0x2B353CFF"/>
+      <Rectangle id="progFill" translation="[800,660]" width="0" height="8" color="0x4CC3B8FF"/>
+      <Label id="timeNow" translation="[800,690]" width="300" color="0x8A979FFF">
+        <Font role="font" uri="font:MediumSystemFontFile" size="28"/>
+      </Label>
+      <Label id="timeEnd" translation="[1420,690]" width="300" horizAlign="right" color="0x8A979FFF">
+        <Font role="font" uri="font:MediumSystemFontFile" size="28"/>
+      </Label>
+    </Group>
+
+    <Rectangle translation="[120,900]" width="1680" height="2" color="0x2B353CFF"/>
+    <Label id="hints" translation="[0,940]" width="1920" horizAlign="center" color="0x8A979FFF"
+           text="OK  Play / Pause        Left / Right  Skip        *  Sync group and settings">
+      <Font role="font" uri="font:MediumSystemFontFile" size="28"/>
+    </Label>
+
+    <Group id="menu" visible="false">
+      <Rectangle width="1920" height="1080" color="0x000000B0"/>
+      <Rectangle translation="[510,150]" width="900" height="780" color="0x1A2126FF"/>
+      <Label id="menuTitle" translation="[560,190]" width="800" color="0xE8EDF0FF">
+        <Font role="font" uri="font:BoldSystemFontFile" size="44"/>
+      </Label>
+      <LabelList id="menuList" translation="[560,280]" itemSize="[800,72]" itemSpacing="[0,6]" numRows="8"
+                 color="0xE8EDF0FF" focusedColor="0x0E1316FF">
+        <Font role="font" uri="font:MediumSystemFontFile" size="32"/>
+        <Font role="focusedFont" uri="font:MediumSystemFontFile" size="32"/>
+      </LabelList>
+      <Label translation="[560,870]" width="800" color="0x8A979FFF" text="Back to close">
+        <Font role="font" uri="font:MediumSystemFontFile" size="26"/>
+      </Label>
+    </Group>
+
+    <Timer id="tick" repeat="true" duration="0.5"/>
+    <Timer id="retry" repeat="false" duration="10"/>
+    <Timer id="prefsTimer" repeat="false" duration="2"/>
+  </children>
+</component>

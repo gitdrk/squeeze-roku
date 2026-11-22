@@ -1,0 +1,12 @@
+title=Squeeze Player
+subtitle=A Lyrion (Squeezebox) player for your Roku TV
+major_version=0
+minor_version=1
+build_version=0
+ui_resolutions=fhd
+rsg_version=1.2
+mm_icon_focus_fhd=pkg:/images/icon_fhd.png
+mm_icon_focus_hd=pkg:/images/icon_hd.png
+splash_screen_fhd=pkg:/images/splash_fhd.png
+splash_color=#0E1316
+splash_min_time=800

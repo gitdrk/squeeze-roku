@@ -1,0 +1,19 @@
+{
+  "name": "squeeze-roku",
+  "version": "0.1.0",
+  "description": "A Lyrion (Squeezebox) player channel for Roku TVs that joins sync groups.",
+  "scripts": {
+    "test": "brs source/Proto.brs tests/proto_test.brs",
+    "check": "bsc --create-package=false",
+    "build": "bsc",
+    "deploy": "node tools/deploy.js",
+    "images": "python tools/make_images.py"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@rokucommunity/brs": "^0.47.6",
+    "brighterscript": "^0.73.8",
+    "roku-deploy": "^3.18.4"
+  },
+  "private": true
+}
